@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="checkbox" name="" id="btn">
+        <img class="bulb-off"  id="bulb-off" src="/IMG/bubl.png" alt="">
+
+        <audio preload="auto" id="beep" style="visibility: hidden;">
+            <source src="/audio/part2-switch-on.mp3">
+        </audio>
+
+        <img class="bulb-on" id="bulb-on" src="/IMG/bulb-on.png" alt="">
+
+        <audio preload="auto" id="beep1" style="visibility: hidden;">
+            <source src="/audio/part2-switch-on.mp3">
+        </audio>
+
+        <label for="btn"></label>
+    </div>
+
+
+    <script>
+		
+		var beepOne = $("#beep")[0];
+		$("#btn")
+	.click(function() {
+		beepOne.play();
+	});
+	
+	</script>
+</body>
+</html>

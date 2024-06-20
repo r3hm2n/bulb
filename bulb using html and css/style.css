@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: black;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 450px;
+    position: relative;
+}
+
+.wrapper .bulb-off{
+    position: absolute;
+    width: 485px;
+    height: 450px;
+    margin-top: -200px;
+
+}
+
+.wrapper label{
+    position: absolute;
+    bottom: 20px;
+    margin-left: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    display: block;
+    border: 2px solid white;
+    padding: 7px;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    color:white;
+}
+
+.wrapper label:hover{
+    transform: translateY(3px);
+    color: black;
+    background-color: white;
+}
+
+.wrapper img#bulb-on{
+    opacity: 0;
+    animation: glow 3s linear infinite;
+}
+
+.wrapper label::before{
+    content: 'Turn Off';
+}
+
+
+.wrapper .bulb-on{
+    opacity: 0;
+    width: 77%;
+    margin-top: -180px;
+    height: 429px;
+    margin-left: -10px;
+    animation: glow 3s linear infinite;
+
+}
+
+@keyframes glow{
+    0%{
+        opacity: 1;
+    }
+    5%{
+        opacity: 1;
+    } 
+    70%{
+        opacity: 1;
+    } 
+    74%{
+        opacity: 1;
+    } 
+    80%{
+        opacity: 0;
+    }
+    86%{
+        opacity: 1;
+    }
+    92%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.wrapper input{
+    display: none;
+}
+
+#btn:checked ~ img#bulb-on{
+    animation: none;
+}
+
+
+#btn:checked ~ label::before{
+    content: 'Turn On';
+}
